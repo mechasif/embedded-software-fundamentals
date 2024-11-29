@@ -2,9 +2,9 @@
 
 👨‍🏫 Inspired by Miro Samek
 
-⭐ The Original YouTube course can be found here: https://youtube.com/playlist?list=PLPW8O6W-1chwyTzI3BHwBLbGQoPFxPAPM&si=4JRZDAaRgmlbu1xS
+⭐ The Original YouTube course can be found [here](https://youtube.com/playlist?list=PLPW8O6W-1chwyTzI3BHwBLbGQoPFxPAPM&si=4JRZDAaRgmlbu1xS)
 
-⭐ Here's the GitHub repository of the original course: https://github.com/QuantumLeaps/modern-embedded-programming-course
+⭐ Here's the GitHub repository of the [original course](https://github.com/QuantumLeaps/modern-embedded-programming-course)
 
 ## L1 -> How Computers Counts:
 
