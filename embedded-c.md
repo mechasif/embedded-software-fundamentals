@@ -877,10 +877,25 @@ Usage                       --- Can signal/release by any task        --- Must b
 ## L33 -> Event-Driven Programming Part 1: GUI example, events, event-loop, run-to-completion, no-blocking:
 
 - API: Application Programming Interface
-- 
+- Event loop (message loop or message pump)
+  - Where the program performs the real work
 
+- Event processing proceeds in Run-to-completion (RTC) steps that cannot be interrupted by the processing of any other event
+- The inversion of control is really what it means that "ëvent drive the application" and not the other way around
+- "Ultimate hook" emphasizes the ease of attaching or "hooking up" your code to every event
+- "Programming by Difference" emphasizes the fact that you only need to explicitly program the "difference" from the default behavior
+- Do NOT mix sequential programming with event-driven programming
 
-## L34 -> 
+## L34 -> Event-Driven Programming Part-2: Best practices for concurrency and Active Object Pattern:
+
+- "Active Object" Design Pattern
+  - Active Object = Private-data + Private-thread + Private-queue
+  - Only way to communicate with AO
+    - Asynchronous event posting to its queue
+  - Events are processed to completion on the private thread
+    - No need for mutual exclusion
+  - The strictest form of OOP
+  - Higher level of abstraction above the "naked" RTOS
 
 
 ## L35 -> 
