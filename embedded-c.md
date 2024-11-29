@@ -1,4 +1,5 @@
-# Modern Embedded Systems Programming by Miro Samek
+# Modern Embedded Systems Programming Course
+Inspired by Miro Samek
 
 ## L1 -> How Computers Counts:
 
