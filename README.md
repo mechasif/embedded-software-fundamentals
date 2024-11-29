@@ -38,7 +38,7 @@ int main(){
  
 - Signed numbers use 2s Compliment representation
  
-  ![image]([https://github.com/user-attachments/assets/81dc291a-c3a1-4b84-9772-4def131fa115](https://github.com/mechasif/embedded-software-fundamentals/blob/main/Images/2s_Complement.PNG))
+  ![image](https://github.com/mechasif/embedded-software-fundamentals/blob/main/Images/2s_Complement.PNG)
 
 - Machine instruction can manipulate the registers directly, typically in just one clock cycle
 
