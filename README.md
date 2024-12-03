@@ -944,14 +944,86 @@ Usage                       --- Can signal/release by any task        --- Must b
   - Fragmented into action handlers
   - Discourage adding new states and events
  
- ## L39 -> State Machines Part-5: Optimal Implementation in C:
+## L39 -> State Machines Part-5: Optimal Implementation in C:
 
- - 
+ - Having multiple returns from a function is against some popular, embedded coding standards, such as MISRA-C
+ - Measure the number of clock cycles taken by code execution in ARM Cortex-M
+   - The CPU has a hardware block called DWT (Data Watchpoint and Trace)
+   - There is a cycle counter register
+  
+## L40 -> State Machines Part-6: What is Hierarchical State Machine:
 
+- One of the most important principles of software development,
+  - DRY: Don't Repeat Yourself
 
+- State transition explosion: This means that the complexity of the state machine solution to a given problem tends to grow disproportionately faster than the complexity of the problem
 
+- The process of moving an application from one framework to another is a form of refactoring and is called porting
 
- ## To Be Continued ... 
+- Finite State Machine (FSM): Is a computational model used to design systems with a limited number of specific states
+  - It transitions between these states based on input or events, defining state changes and actions in response to those events
+
+- Hierarchical State Machine (HSM): Is an FSM with nested states, where substates inherit transitions and behaviors from their parent states, simplifying complex state management
+
+## L41 -> State Machines Part-7: Automatic Code Generation:
+
+- QM: Code generation tool and its features
+  - Code generation is critical to modeling
+  - No need to "fight" the new lightweight tools
+  - Success requires attention to practical issues
+ 
+## L42 -> State Machines Part-8: Semantics of Hierarchical State Machine (HSM):
+
+- Top-most Initial Transition
+- State Transition
+- Least Common Ancestor (LCA)
+- Internal Transition
+- Self Transition
+- Guard Conditions
+- Guaranteed Cleanup (Exit Action)
+- Guaranteed Initialization (Entry Action)
+- High-level Transitions
+- Internal Transition with Guards
+
+## L43 -> Active Objects in Real-Time Part-1: Run-to-completion and RMS/RMA:
+
+- Logic analyzer set to falling edge for the SW1 trace, because the switch is active low
+- Run-to-completion != Monopolizing the CPU
+
+## L44 -> Active Objects in Real-Time Part-2: Mutable Events:
+
+- Mutable events: Events whose properties or data can be changed after they have been created
+  - This allows the event's information to be modified during its lifecycle, potentially affecting how it is processed or handled by the system
+
+- Active Object: An object that encapsulates its own thread of control, managing its execution asynchronously using a message queue to handle method calls
+
+## L45 -> Software Tracing with "printf":
+
+- Instrumentation: "printf" statements are placed throughout the code, which is called instrumentation so that the code itself reports what it is doing
+  - Such debugging by printf, sprintf, snprintf, and similar functions is the most primitive of a class of techniques collectively called software tracing
+ 
+- The Cortex-M processors have a built-in ITM module
+  - ITM: Instrumentation Trace Macrocell
+  - Designed to support "printf" style debugging
+- ITM requires a more advanced Hardware debugger probe
+- The most professional way of incorporating software tracing into your project is through the concept of a Build Configuration
+- Build Configuration: Is a Collection of settings and source code packaged together and having a distinct name
+- printf: Create huge CPU overhead, not optimal
+
+## L46 -> Software Tracing with Binary Protocols:
+
+- Software Tracing with QP/Spy
+- Using QP framework for software tracing
+
+In context with ARM Cortex-M MCUs:
+  - Address start with 0x2 -> RAM address
+  - Address start with 0x0 -> ROM address
+
+## L47 -> Assertions and Design by Contract, Part-1:
+
+- 
+
+## To Be Continued ... 
 
 ## appendix
 
