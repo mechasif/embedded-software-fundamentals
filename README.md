@@ -1021,7 +1021,101 @@ In context with ARM Cortex-M MCUs:
 
 ## L47 -> Assertions and Design by Contract, Part-1:
 
-- 
+- Software Assertions: Assertions are Boolean expressions that allow a program to check itself as it runs
+  - Assertion -> TRUE -> Program is running as expected
+  - Assertion -> FALSE -> Error
+ 
+- To use assertions properly and effectively, you must clearly distinguish between programming errors and exceptional condition
+
+- Errors (a.k.a. "Bugs")
+  - Defects due to design or implementation mistakes
+    - e.g.: Dividing by zero, overrunning an array index, de-referencing a Null pointer, using a peripheral before initializing it
+    - Can't handle the situation
+      - Instead, focus on detecting, reporting, and fixing
+    - Can't continue execution
+      - Instead, devise a damage control strategy
+    - This is where assertions come in
+   
+- Exception Condition
+  - Specific circumstances that can legitimately arise during the system's lifetime but are relatively rare and lie off the main execution path of your software.
+  - e.g., Incorrect user input, transmission error on inherently unreliable connections (such as wireless), abnormal or degraded modes of operation, etc.
+  - In this case, you should NOT use assertions
+  - Rather, you must carefully design and implement strategies that handle such exceptional conditions
+
+- Attempting to "handle" an error as an exceptional condition is just as bad as the other way around
+  - This programming style is known as "Defensive Programming"
+  - It aims to make the software more "robust" to errors by accepting a wider range of inputs or allowing an order of operations inconsistent with the program's state
+ 
+- DBC (Design by Contract): Views assertions as specifications of mutual obligations between software components - analogous to contracts between people
+
+- Assertions are NOT an error-handling mechanism!
+  - They neither handle nor prevent errors
+  - Just like contracts among people don't prevent fraud
+  - Assertions in Software as corresponding to electrical fuses
+ 
+## L48 -> Assertions and Design by Contract, Part-2:
+
+- Using assertion using QPC-framework
+- Never remove assertion, even in the final release
+
+## L49 -> Embedded Unit Testing:
+
+- "In Embedded Systems, NOTHING works until EVERYTHINGS works" - SYSTEMANTICS by John Gall
+
+- Test Driven Development -> TDD
+
+    ![image](https://github.com/user-attachments/assets/8e7c35cd-2790-4068-aa02-6aa90086ab1d)
+
+- Software Testing
+
+    ![image](https://github.com/user-attachments/assets/cd460967-385c-4149-889b-824f93883f5d)
+
+- Unit testing: This involves the smallest software components that can be isolated and individually tested, such as functions and modules in C
+
+- The lower the testing level, the more extensive the software "Habitat" must be
+  - For unit testing, this artificially created "habitat" is called a "testing harness" or "testing framework"
+
+- Harnesses that made their way into embedded software include,
+  - CppUtest
+  - Embedded Test (ET)
+  - Unity
+  - Google test or gtest
+ 
+Book: Test-Driven Development for Embedded C by James W. Grenning
+
+- Code Under Test (CUT)
+
+- Dual Targeting: Meaning that from Day one, your code is designed to run on two platforms, the final embedded target and your development host computer
+  - Dual Targeting is not Emulation
+
+## L50 -> To block or NOT to block, that is the question!
+
+- Blocking
+  - Busy polling [e.g., delay() function]
+  - by context switch (in RTOS)
+ 
+- Composability: As long as the components of the super loop don't block, they are primarily composable, meaning you can keep adding or removing them, and the loop will still work
+  - But when blocking is introduced, the composability lost
+
+- Event-driven architecture used by NASA JPL in all its Martian rovers
+
+## L51 -> Traceable Documentation with Doxygen and Spexygen:
+
+- IEC 61508: International Functional Safety Standards
+- Traceable Documentation
+
+- Traceability: It is the explicit representation of the relationships among work artifacts
+  - e.g., A requirement can be connected to a code element that fulfills the requirement or a code element can be connected to a unit test that tests that code
+
+  - Backward traceability: Checking that the implementation (what you did) is justified by a requirement (what you need); this often involves citing the parent of the activity you just completed
+
+  - Forward traceability: Checking that a requirement (what you need) is adequately addressed in later lifecycle stages (what you will do); this often involves citing the proposed child of the activity you just completed
+ 
+- For functional safety certification -> You should have bidirectional traceability
+
+- Most often, the Doxygen comment must precede the documented element, but Doxygen also supports comments after the element
+
+- SRS: Software Requirement Specification
 
 ## To Be Continued ... 
 
