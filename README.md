@@ -916,14 +916,38 @@ Usage                       --- Can signal/release by any task        --- Must b
 - Guard Conditions: Are boolean expressions evaluated at run-time
 - Try to use as few guard conditions as possible
 
-## L36 -> State Machines Part-2: Input-Driven State Machine:
+## L37 -> State Machines Part-3: Input-Driven State Machine:
 
 - Race conditions can happen on hardware as well when the propagation delays through the electronic components can lead to different outputs depending on the relative timing
-  - Today's virtually all digital electronics, including all embedded CPUs are synchronous
+  - Today's virtually all digital electronics, including all embedded CPUs, are synchronous
 
 - Just analogy - Not precise equivalent
   - Input-driven state machines could be compared to the asynchronous circuits
   - Event-driven state machines could be compared to the synchronous circuits
+
+## L38 -> State Machines Part-4: State Tables and Entry/Exit Actions:
+
+![image](https://github.com/user-attachments/assets/3ab0dd50-0e9a-424e-bb0d-3bd623f5639e)
+
+- The "static" keyword limits the visibility of the static elements inside the given module and prevents any accidental access to them from anywhere else
+- State Machines that associate action with states are called Moore machines (Better, Cleaner, more robust, and maintainable)
+- State Machines that associate action with transitions are called Mealy machines
+
+- State Machine Implementation Strategies
+
+    ![image](https://github.com/user-attachments/assets/5193beb8-d836-4c06-ae6a-6f7debe7fba9)
+
+- The main advantage of the state-table representation is the highly regular structure that forces you to consider all possible state and event combination
+  - Good and deterministic runtime performance
+
+- Disadvantage -> State Table
+  - Fragmented into action handlers
+  - Discourage adding new states and events
+ 
+ ## L39 -> State Machines Part-5: Optimal Implementation in C:
+
+ - 
+
 
 
 
