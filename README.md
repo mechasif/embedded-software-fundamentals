@@ -904,6 +904,29 @@ Usage                       --- Can signal/release by any task        --- Must b
   - The strictest form of OOP
   - Higher level of abstraction above the "naked" RTOS
 
+## L35 -> State Machines Part-1: What is a state machine?
+
+- The "State" of a system is an equivalence class of past histories of a system, all of which are equivalent in the sense that the future behavior of the system given any of these past histories will be identical
+- "State Machine" is a set of all states (equivalence class of past histories of a system) plus the rules for changing from one state to another (state transitions)
+- Run-to-completion (RTC) event processing
+- When every part of the code corresponds to the parts of the state diagram, called "Traceability", which is a required property in safety-critical software
+
+## L36 -> State Machines Part-2: Guard Condition:
+
+- Guard Conditions: Are boolean expressions evaluated at run-time
+- Try to use as few guard conditions as possible
+
+## L36 -> State Machines Part-2: Input-Driven State Machine:
+
+- Race conditions can happen on hardware as well when the propagation delays through the electronic components can lead to different outputs depending on the relative timing
+  - Today's virtually all digital electronics, including all embedded CPUs are synchronous
+
+- Just analogy - Not precise equivalent
+  - Input-driven state machines could be compared to the asynchronous circuits
+  - Event-driven state machines could be compared to the synchronous circuits
+
+
+
  ## To Be Continued ... 
 
 ## appendix
