@@ -135,11 +135,13 @@
       //In other words, p_int is a variable that can hold addresses of integer variables
       int *p_int;
   
-      //The operator ampersand(&) gives the address of the "counter" variable, and this address can be legally assigned to p_int
+      //The operator ampersand(&) gives the address of the "counter" variable,
+      //and this address can be legally assigned to p_int
       p_int = &counter;
 
       //To get the value stored at a given address from the pointer, called de-referencing the pointer
-      //*p_int means the value at the address currently stored in the p_int pointer, which is the value of the counter variable in this case
+      //*p_int means the value at the address currently stored in the p_int pointer,
+      //which is the value of the counter variable in this case
       while(*p_int < 21) {
         ++(*p_int);
       }
