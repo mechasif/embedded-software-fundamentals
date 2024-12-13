@@ -108,10 +108,10 @@
 
   ![image](https://github.com/user-attachments/assets/45d37f4c-511d-4133-879c-912360c6c397)
 
-Here,
-  - LDR.N (Instruction) -> Load from a memory to a register
-  - ADDS (Instruction) -> Increment the register by 1
-  - STR (Instruction) -> Stores the value of the, e.g., R0 register to the memory pointed to by the e.g., R1 register
+   - Here,
+      - LDR.N (Instruction) -> Load from a memory to a register
+      - ADDS (Instruction) -> Increment the register by 1
+      - STR (Instruction) -> Stores the value of the, e.g., R0 register to the memory pointed to by the e.g., R1 register
 
 - RISC -> Reduced Instruction Set Computer
   - Where memory can only be read by the special "load" instruction, all data manipulation must happen in the registers. Finally, the special "store" instructions can store the modified register values in the memory.
