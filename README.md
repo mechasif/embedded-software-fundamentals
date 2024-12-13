@@ -106,7 +106,7 @@
   ```
 - Machine instruction for the above code:
 
-  ![image](https://github.com/user-attachments/assets/45d37f4c-511d-4133-879c-912360c6c397)
+  ![image](https://github.com/user-attachments/assets/ea91de08-0124-42a1-ba4f-fca56725fd73)
 
    - Here,
       - LDR.N (Instruction) -> Load from a memory to a register
