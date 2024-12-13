@@ -113,17 +113,52 @@
       - ADDS (Instruction) -> Increment the register by 1
       - STR (Instruction) -> Stores the value of the, e.g., R0 register to the memory pointed to by the e.g., R1 register
 
-- RISC -> Reduced Instruction Set Computer
-  - Where memory can only be read by the special "load" instruction, all data manipulation must happen in the registers. Finally, the special "store" instructions can store the modified register values in the memory.
-- This is in contrast to the Complex Instruction Set Computer (CISC) architecture, such as the venerable x86 inside the personal computer, where some of the operands for complex instruction don't need to be in the registers and can still be in memory.
-- In the C language, the addresses can be stored inside variables called "pointers"
-- The C language has a mechanism to enforce a type by using type casting,
+- ARM is an example of the so-called Reduced Instruction Set Computer (RISC) architecture
+  - Where memory can only be read by the special "load" instruction
+  - All data manipulation must happen in the registers
+  - Finally, the special "store" instructions can store the modified register values in the memory
+
+  - This is in contrast to the Complex Instruction Set Computer (CISC) architecture
+    - Such as the venerable x86 inside the personal computer
+    - Where some of the operands for complex instruction don't need to be in the registers and can still be in memory
+
+- Every access to memory necessarily requires the knowledge of the address to load the data from or to store the data to
+
+- If those memory addresses are so fundamental to the CPU, can they be somehow represented at the C-language level?
+  - Yes, in the C language, the addresses can be stored inside variables called "pointers"
     
     ```c
-    int *p_int;
-    p_int = (int *)0x20000002U;
-    ```
+    int counter = 0;
+
+    int main() {
+      //So, p_int is a pointer, which is what the star means after the type--to integers
+      //In other words, p_int is a variable that can hold addresses of integer variables
+      int *p_int;
+  
+      //The operator ampersand(&) gives the address of the "counter" variable, and this address can be legally assigned to p_int
+      p_int = &counter;
+
+      //To get the value stored at a given address from the pointer, called de-referencing the pointer
+      //*p_int means the value at the address currently stored in the p_int pointer, which is the value of the counter variable in this case
+      while(*p_int < 21) {
+        ++(*p_int);
+      }
+      return 0;
+    }
     
+    ```
+
+  - The introduction of the p_int pointer has simplified the machine code and improved its efficiency
+  
+    ![image](https://github.com/user-attachments/assets/167e0bd6-1937-4896-9bd2-ded674b04a6c)
+
+
+- The C language has a mechanism to enforce a type by using type casting,
+
+  ```c
+  p_int = (int *)0x20000002U;
+  ```
+
 - You perform such type casting by placing the name of the type in parentheses in front of the cast expression (int *)
     ```c
     p_int = (int *)0x20000002U;
