@@ -93,7 +93,7 @@
 
 ## L3 -> Variables & Pointers:
 
-Example Code:
+- Example code:
 
   ```c
   int counter = 0;
@@ -104,11 +104,15 @@ Example Code:
     return 0;
   }
   ```
+- Machine instruction for the above code:
 
+  ![image](https://github.com/user-attachments/assets/45d37f4c-511d-4133-879c-912360c6c397)
 
-- LDR.N (Instruction) -> Load from a memory to a register
-- ADDS (Instruction) -> Increment the register by 1
-- STR (Instruction) -> Stores the value of the, e.g., R0 register to the memory pointed to by the e.g., R1 register
+Here,
+  - LDR.N (Instruction) -> Load from a memory to a register
+  - ADDS (Instruction) -> Increment the register by 1
+  - STR (Instruction) -> Stores the value of the, e.g., R0 register to the memory pointed to by the e.g., R1 register
+
 - RISC -> Reduced Instruction Set Computer
   - Where memory can only be read by the special "load" instruction, all data manipulation must happen in the registers. Finally, the special "store" instructions can store the modified register values in the memory.
 - This is in contrast to the Complex Instruction Set Computer (CISC) architecture, such as the venerable x86 inside the personal computer, where some of the operands for complex instruction don't need to be in the registers and can still be in memory.
