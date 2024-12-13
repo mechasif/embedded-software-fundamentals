@@ -155,20 +155,23 @@
     ![image](https://github.com/user-attachments/assets/167e0bd6-1937-4896-9bd2-ded674b04a6c)
 
 
-- The C language has a mechanism to enforce a type by using type casting,
+- The C language has a mechanism to enforce a type by using "type casting"
+- You perform such type casting by placing the name of the type in parentheses in front of the cast expression, like this: (int *)
 
-  ```c
-  p_int = (int *)0x20000002U;
-  ```
-
-- You perform such type casting by placing the name of the type in parentheses in front of the cast expression (int *)
     ```c
+    //Here, 0x20000002U is just a fabricated address
     p_int = (int *)0x20000002U;
+
+    //Embedded programmers seem to like using 0xDEADBEEF to poke some easily recognizable integer
     *p_int = 0xDEADBEEF;
     ```     
 
-- Due to the intentional misalignment of the fabricated address (0x20000002U), the 0xDEADBEEF value gets written partially over the "counter" variable and partially over the next word in memory
-- The Cortex-M4 processors accepted this misaligned address, but Cortex-M0 would have a problem with it
+    - Due to the intentional misalignment of the fabricated address (0x20000002U),
+    - the 0xDEADBEEF value gets written partially over the "counter" variable and partially over the next word in memory
+    - The Cortex-M4 processors accepted this misaligned address, but Cortex-M0 would have a problem with it
+    - So, pointers, as any powerful mechanism, can also be dangerous, if used carelessly
+
+Updating...
 
 ## L4 -> How to control the world outside?:
 
