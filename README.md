@@ -91,7 +91,19 @@
 - & -> The ampersand -> bitwise and operator
 
 
-## L3 -> Variables & Pointers: 
+## L3 -> Variables & Pointers:
+
+Example Code:
+    	```c
+      int counter = 0;
+      int main(){
+          while(counter < 21){
+          ++counter;
+          }
+          return 0;
+      }
+      ```
+
 
 - LDR.N (Instruction) -> Load from a memory to a register
 - ADDS (Instruction) -> Increment the register by 1
